@@ -1,0 +1,10 @@
+1- Add Kill process support
+2- Add network support / in/out bytes / in/out packets
+3- Add graphs for CPU & RAM
+4- Add event to send live screen
+5- Record RAM/CPU/Network load using EF Core in DB.cs context
+6- Add UI for historical data with time selection
+7- Add username/password authentication
+8- Make it responsive
+9- Make flutter App to connect to the service and show process list
+10- Make sure the backend works in both Linux and Windows
