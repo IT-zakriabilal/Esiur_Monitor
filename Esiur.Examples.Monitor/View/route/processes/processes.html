@@ -1,0 +1,35 @@
+﻿
+<div style=" padding: 10px;">
+    Total Processes: ${d.length}
+</div>
+
+<i-repeat>
+    <table class="table-list">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Title</td>
+                <td>Start</td>
+                <td>Memory</td>
+                <td>Path</td>
+                <td>Tools</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr repeat>
+                <td>${d.Id}</td>
+                <td>${d.Name}</td>
+                <td>${d.Title}</td>
+                <td>${d.StartTime.toLocaleString('en-US')}</td>
+                <td>${d.Memory}</td>
+                <td>${d.Path}</td>
+                <td>
+                    <i-link href="processes/process" :query="{pid: d.Id}">
+                        Info
+                    </i-link>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</i-repeat>

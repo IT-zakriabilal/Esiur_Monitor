@@ -1,0 +1,39 @@
+﻿
+<div :if="d == null"> Process not found </div>
+
+<table :if="d != null">
+    <tr>
+        <td>Name</td>
+        <td>${d.Name}</td>
+    </tr>
+    <tr>
+        <td>Start Time</td>
+        <td>${d.StartTime}</td>
+    </tr>
+    <tr>
+        <td>Memory</td>
+        <td>${d.Memory}</td>
+    </tr>
+    <tr>
+        <td>Path</td>
+        <td>${d.Path}</td>
+    </tr>
+
+    <tr>
+        <i-button onclick="this.view.kill(this)">Kill</i-button>
+    </tr>
+</table>
+
+<script>
+    {
+        kill: async (sender) => {
+            sender.disabled = true;
+            try {
+                await window.liveService.Kill(sender.data.Id);
+            } catch (ex) {
+                alert(ex);
+            }
+            sender.disabled = false;
+        }
+    }
+</script>

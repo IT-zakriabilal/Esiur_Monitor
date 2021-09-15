@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Esiur.Examples.Monitor": {
+      "commandName": "Project",
+      "workingDirectory": "."
+    }
+  }
+}

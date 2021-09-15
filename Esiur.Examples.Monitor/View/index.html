@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Important for IUI router -->
+    <base href="/">
+
+    <meta charset="utf-8" />
+    <title>Delta Monitor</title>
+
+    <script type="module" src="node_modules/esiur/src/esiur.js"></script>
+    <script type="module" src="node_modules/@esiur/iui/src/iui.js"></script>
+    <link rel="stylesheet" href="node_modules/@esiur/iui/css/iui.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/app.js"></script>
+
+</head>
+<body>
+
+    <i-app @load="connect()">
+
+        <div class="toolbar">
+            <i-navbar auto collapsed css-class="sitebar">
+            </i-navbar>
+        </div>
+
+        <i-router style="background: red">
+
+            <i-route name="connect" Caption="Connecting..." private>
+                Connecting to server...
+            </i-route>
+
+            <i-route name="live" src="route/live.html" caption="Live" :data="window.liveService">
+
+            </i-route>
+
+
+            <i-route name="processes" src="route/processes/processes.html" caption="Processes" :data="liveService.GetProcesses()">
+                <i-route name="ui" src="route/processes/processes.html" caption="UI Processes" :data="liveService.GetUIProcesses()">
+
+                </i-route>
+
+                <i-route name="process" src="route/processes/process.html" caption="Process"
+                         :data="liveService.GetProcessById(d.pid)" private>
+                </i-route>
+            </i-route>
+
+
+            <i-route name="history" src="route/history.html" caption="History"></i-route>
+            <i-route name="network" src="route/network.html" caption="Network"></i-route>
+        </i-router>
+
+        <div id="log">
+            
+        </div>
+    </i-app>
+</body>
+</html>
