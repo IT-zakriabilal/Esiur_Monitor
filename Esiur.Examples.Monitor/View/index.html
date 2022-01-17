@@ -11,8 +11,8 @@
     <script type="module" src="node_modules/esiur/src/esiur.js"></script>
     <script type="module" src="node_modules/@esiur/iui/src/iui.js"></script>
     <link rel="stylesheet" href="node_modules/@esiur/iui/css/iui.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/app.js"></script>
 
 </head>
 <body>
@@ -35,8 +35,10 @@
             </i-route>
 
 
-            <i-route name="processes" src="route/processes/processes.html" caption="Processes" :data="liveService.GetProcesses()">
-                <i-route name="ui" src="route/processes/processes.html" caption="UI Processes" :data="liveService.GetUIProcesses()">
+            <i-route name="processes" src="route/processes/processes.html"
+                     caption="Processes" :data="liveService.GetProcesses()">
+                <i-route name="ui" src="route/processes/processes.html" 
+                         caption="UI Processes" :data="liveService.GetUIProcesses()">
 
                 </i-route>
 

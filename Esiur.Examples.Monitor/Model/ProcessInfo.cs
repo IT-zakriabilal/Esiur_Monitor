@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 
 namespace Esiur.Examples.Monitor.Model
 {
-
     public class ProcessInfo : IRecord
     {
         [Public] public int Id { get; set; }

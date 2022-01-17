@@ -26,6 +26,11 @@
         });
 
     } catch (ex) {
+
         alert(ex);
     }
+}
+
+window.onload = () => {
+    connect();
 }
